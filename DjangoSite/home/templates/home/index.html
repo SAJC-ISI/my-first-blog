@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPSE Matutino</title>
+</head>
+
+<body bgcolor="skyblue" text="blue" link="green" alink="red" vlink="blue" style="font-family: Comic Sans MS,Arial,Verdana;">
+    <header>
+        <center>
+            <table style="border: 1px solid skyblue;">
+                <tbody>
+                    <tr>
+                        <th><img src="https://laverdad.com.mx/wp-content/uploads/2021/11/89005494-noviembre-mes-de-lucha-contra-el-cancer-de-prostata-en-espanol.jpg" width="150" height="150"></th>
+                        <th style="width: 100px;"></th>
+                        <th style="font-size: 55px;">Noviembre mes del cancer de prostata
+                            <p style="font-size: 20px;">"El rosa ya no es exclusivo de las mujeres, el cancer tampoco"</p>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <hr style="border: 1px solid black;">
+            <nav>
+                <table style="border: 1px solid skyblue;">
+                    <tbody>
+                        <tr>
+                            <th style="width: 150px;">
+                                <form action="{% url 'home:home'%}">
+                                    {% csrf_token %}
+                                    <button style="background-color: cyan; border: 2px solid black; border-radius: 25px; width: 100px; height: 50px; font-size: 25px; font-weight: bold; font-family: Comic Sans MS,Arial,Verdana;">Home</button>
+                                </form>
+                            </th>
+                            <th style="width: 150px;">
+                                <form action="{% url 'sintactico'%}">
+                                    {% csrf_token %}
+                                    <button style="background-color: cyan; border: 2px solid black; border-radius: 25px; width: 100px; height: 50px; font-size: 25px; font-weight: bold; font-family: Comic Sans MS,Arial,Verdana;">Info</button>
+                                </form>
+                            </th>
+                            <th style="width: 150px;">
+                                <form action="{% url 'grafo:grafo'%}">
+                                    {% csrf_token %}
+                                    <button style="background-color: cyan; border: 2px solid black; border-radius: 25px; width: 100px; height: 50px; font-size: 25px; font-weight: bold; font-family: Comic Sans MS,Arial,Verdana;">Check</button>
+                                </form>
+                            </th>
+                            <th style="width: 150px;">
+                                <form action="{% url 'about:about'%}">
+                                    {% csrf_token %}
+                                    <button style="background-color: cyan; border: 2px solid black; border-radius: 25px; width: 100px; height: 50px; font-size: 25px; font-weight: bold; font-family: Comic Sans MS,Arial,Verdana;">About</button>
+                                </form>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </nav>
+        </center>
+    </header>
+
+    <hr style="border: 1px solid black; ">
+
+    <main>
+        {% block contenido %}
+        <h1 style="text-align: center;">
+            ¡ BIENVENIDO !
+        </h1>
+        <p style="text-align: justify;">
+            Después del “mes rosa”, dedicado a la salud femenina, y en el que se aborda específicamente el tema del cáncer de mama, entramos de lleno al mes de noviembre, o “mes azul” dedicado a la salud masculina, cuyo objetivo principal es el de impulsar en los
+            varones adultos la adopción de una visión preventiva de la medicina.
+            <br><br>Desde el inicio de este mes, a nivel mundial está en curso la campaña Noviembre Azul. Si el mes de octubre fue rosa y dedicado a la concientización al respecto del diagnóstico y tratamiento del cáncer de mama, ahora, el mes es azul
+            y el enfoque es la prevención al cáncer de próstata. La primera iniciativa de Noviembre Azul inició en Australia, en 2003, y se volvió mundialmente conocida como Movember, fusión de las palabras moustache (bigotes) y november (noviembre).
+            Este mes también fue escogido porque el día 17 se conmemora el Día Mundial de la Lucha Contra el Cáncer de Próstata.
+            <br><br> En muchas ocasiones se ha hablado acerca de la enorme importancia que tiene detectar, diagnosticar y ofrecer de manera temprana y expedita, el o los tratamientos necesarios que ayuden a evitar el desarrollo, complicación o agravamiento
+            de las enfermedades, en este caso las que aquejan con mayor frecuencia a los hombres en México, y entre las que destacan las afecciones cardiovasculares (primariamente hipertensión arterial); los cánceres de próstata (primera causa de mortalidad
+            por cáncer en los hombres mexicanos), testículos y colon; orquitis, orquiepididimitis; disfunción eréctil y diabetes, constituida esta última como la primera causa de muerte entre las mujeres y la segunda entre los hombres, e importante factor
+            de riesgo para el desarrollo de cardiopatías y accidentes cerebrovasculares.
+            <br><br> De acuerdo con la opinión del Dr. Omar Hernández León, jefe del servicio de Urología del Hospital Juárez de México, es necesario que a partir de los 40 años de edad los hombres acudan regularmente a consulta médica, para que el especialista
+            de la salud tenga oportunidad de evaluar, entre otras cosas, sus niveles de colesterol, triglicéridos y glucosa en sangre, la función hepática, la presión arterial, y peso corporal.
+            <br><br>Por ello se invita a todos los varones mayores de 40 años a vencer la resistencia, enfrentar al miedo e ignorar los tabúes para acudir al médico de manera preventiva.
+        </p>
+        <center>
+            <img src="https://codigof.mx/wp-content/uploads/2020/11/NoviembreMesAzul.jpg" width="600" height="300">
+        </center>
+        {% endblock contenido %}
+    </main>
+</body>
+
+</html>

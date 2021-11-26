@@ -1,0 +1,75 @@
+{% extends 'home/index.html' %} {% block contenido %}
+<h1 style="text-align: center;">Info</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>
+                <table style="border: 1px solid black;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid black; ">Clave</th>
+                            <th style="border: 1px solid black; ">Temperatura</th>
+                            <th style="border: 1px solid black; ">Color</th>
+                            <th style="border: 1px solid black; ">Informacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for elemento in lista %}
+                        <tr>
+                            <td style="border: 1px solid black; ">{{elemento.pk}}</td>
+
+                            {% if elemento.temperatura > 50 %}
+                            <td style="border: 1px solid red; ">{{elemento.temperatura}}</td>
+                            {% else %}
+                            <td style="border: 1px solid black; ">{{elemento.temperatura}}</td>
+                            {% endif %}
+                            <td style="border: 1px solid black; ">{{elemento.color}}</td>
+                            <td style="border: 1px solid black; ">{{elemento.inflammation}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </th>
+            <th style="width: 50px;"></th>
+            <th style="vertical-align: text-top;">
+                <p style="text-align: justify;">
+                    La próstata es una glándula ubicada debajo de la vejiga y delante del recto, del tamaño de una nuez, que solo la poseen los hombres. Su función es producir una parte del líquido simiente (semen). La enfermedad tiene como factor principal la aparición
+                    de células malignas o cancerosas en los tejidos de la próstata. Sin embargo, no existen síntomas, hasta tanto se encuentra en estado avanzado. La mortalidad es ocasionada, principalmente, porque el cáncer es detectado en su etapa conocida
+                    como de metástasis o no curable.
+                    <br><br>De acuerdo con Francisco Varela Riojano, subjefe del servicio de Oncología del Hospital Juárez de México, el 70% de los casos se detecta en etapas avanzadas. Y según la Comisión Nacional para los Derechos Humanos (CNDH), el
+                    cáncer de próstata es el causante de 14 muertes diarias de mexicanos.
+                    <br><br>Entre los tumores malignos, es la primera causa principal de muerte por cáncer y es la más común en todo el mundo, seguido solamente por el cáncer de pulmón. Y, anualmente, se registran alrededor de 12 500 casos nuevos de cáncer
+                    de próstata.
+                    <br><br>El cáncer de próstata es silencioso y exige prevención. Una de las formas para verificar la existencia de la enfermedad es por medio de la prueba PSA (Antígeno Prostático Específico). A pesar de que no es específicamente para
+                    la detección del cáncer, sino para la evaluación de la próstata (que puede aumentar de tamaño por diversos factores, como una inflamación o la edad, por ejemplo), su resultado puede ser una señal de la enfermedad. Otro examen que no
+                    sustituye al anterior es el de tacto rectal. En caso de historial familiar, cuando el padre, el hermano o el tío ya tuvieron cáncer de próstata, lo ideal es empezar a hacerlo a los 40 años. En caso de que no haya incidencia familiar,
+                    el examen debe realizarse a los 45 años.
+                    <br><br>Posibles sintomas:
+                    <br><br>
+                    <ul style="text-align: justify;">
+                        <li>
+                            Problemas al orinar, incluyendo un flujo urinario lento o debilitado o necesidad de orinar con más frecuencia, especialmente de noche
+                        </li>
+                        <br>
+                        <li>
+                            Sangre en la orina o en el semen
+                        </li>
+                        <br>
+                        <li>
+                            Dificultad para lograr una erección (disfunción eréctil)
+                        </li>
+                        <br>
+                        <li>
+                            Dolor en las caderas, la espalda (columna vertebral), el tórax (costillas) u otras áreas, (puede deberse a que el cáncer se ha propagado a los huesos)
+                        </li>
+                        <br>
+                        <li>
+                            Debilidad o adormecimiento de las piernas o los pies, o incluso pérdida del control de la vejiga o los intestinos debido a que el cáncer comprime la médula espinal.
+                        </li>
+                    </ul>
+                </p>
+            </th>
+        </tr>
+    </tbody>
+</table>
+{% endblock contenido %}

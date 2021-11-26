@@ -1,0 +1,43 @@
+{% extends 'home/index.html' %} {% block contenido %}
+
+<h1 style="text-align: center;">Checalo tu mismo</h1>
+
+<p style="text-align: justify;">
+    Todos los hombres deben ir a consulta periódica, realizarse estudios, sobre todo no tener miedo a padecer alguna enfermedad. Tiene que dejar atrás miedos, mitos y tabúes para vivir bien y mejor.
+</p>
+<center>
+    <form action="{% url 'grafo:grafo' %} " method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit " name="in" style="background-color: forestgreen; border: 2px solid black; border-radius: 10px; width: 75px; height: 30px; font-size: 15px; font-weight: bold; font-family: Comic Sans MS,Arial,Verdana;">Procesar</button>
+        <br><br>
+    </form>
+
+    {% if umbral %}
+
+    <table style="border: 1px solid black;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; ">R1</th>
+                <th style="border: 1px solid black; ">R2</th>
+                <th style="border: 1px solid black; ">Distancia</th>
+                <th style="border: 1px solid black; ">Si/No</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for elemento in lista %}
+            <tr>
+                <td style="border: 1px solid black; ">{{elemento.R1}}</td>
+                <td style="border: 1px solid black; ">{{elemento.R2}}</td>
+                <td style="border: 1px solid black; ">{{elemento.distance}}</td>
+
+                {% if elemento.distance > umbral %}
+                <td style="border: 1px solid black; ">NO</td>
+                {% else %}
+                <td style="border: 1px solid black; ">SI</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+{% endif %} {% endblock contenido %}
